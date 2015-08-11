@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= Abgeordnetensuche
+  form#formAddUser(name="search",method="get",action="/abgeordnete/keyword")
+    input#inputUserName(type="text", placeholder="Suche...", name="keyword")
+    button#btnSubmit(type="submit") Suche

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    form#formAddUser(name="search",method="get",action="/abgeordnete/keyword")
+        input#inputUserName(type="text", placeholder="Suche...", name="keyword")
+        button#btnSubmit(type="submit") Suche
+    h1.
+        Treffer #{prozent}%
+    ul
+        each abgeordneter, i in abgeordnete
+            li
+                a(href="#{abgeordneter.biourl}")= abgeordneter.name
+                each zeile, j in abgeordneter.biotext
+                    p= zeile
